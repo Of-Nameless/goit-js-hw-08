@@ -26,7 +26,7 @@ function onFormSubmit(e) {
   }
 
     form.reset();
-    // console.log(persistedString);
+    console.log(persistedString);
 
     localStorage.removeItem(LOCALESTORAGE_KEY);
     persistedString = {};
@@ -37,6 +37,7 @@ function reloadForm() {
 
     if (getStorage) {
         persistedString = JSON.parse(getStorage);
+        // console.log(JSON.parse(getStorage));
     }
     for (const key in persistedString) {
         form.elements[key].value = persistedString[key];
